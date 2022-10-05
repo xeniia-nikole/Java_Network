@@ -1,5 +1,6 @@
-package org.example.BackPropagation;
+package org.example.StochasticGradientDescent;
 
+import org.example.BackPropagation.BackPropagationNet;
 import org.jblas.DoubleMatrix;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
@@ -8,14 +9,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BackPropagationNet {
+public class StochasticGradientDescent {
     private int layersNum;
     private int[] sizes;
     private DoubleMatrix[] weights;
     private DoubleMatrix[] biases;
 
     // На вход можно подавать массив любого размера
-    public BackPropagationNet(int @NotNull ... sizes) {
+    public StochasticGradientDescent(int @NotNull ... sizes) {
         this.sizes = sizes;
         this.layersNum = sizes.length;
 
@@ -48,7 +49,7 @@ public class BackPropagationNet {
     }
 
     public static void main(String[] args) {
-        BackPropagationNet net = new BackPropagationNet(1, 1);
+        StochasticGradientDescent net = new StochasticGradientDescent(1, 1);
         double[] inputs = {0};
         double[] outputs = {0};
         double[][] inputsOutputs = new double[][]{inputs, outputs};
